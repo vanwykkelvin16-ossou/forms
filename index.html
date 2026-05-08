@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SA Broking Services — Commercial Proposal Form</title>
+<title>SA Broking Services - Commercial Proposal Form</title>
 <style>
   /* ============================================
-     SA Broking Services — Commercial Proposal Form
+     SA Broking Services - Commercial Proposal Form
      Modern, clean design system (refresh 2026)
      ============================================ */
 
@@ -857,7 +857,22 @@
     height:1px;
     background:var(--gray-200);
   }
-</style>
+
+    /* Custom option text input */
+    .custom-sel-input {
+      display: none;
+      margin-top: 5px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px 8px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -893,7 +908,8 @@
         <option>Trust</option>
         <option>Non-profit organisation</option>
         <option>Other</option>
-      </select>
+      <option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field full"><div class="lbl">Full business description<span class="sub">including company operations and activities</span></div><div class="ctrl"><textarea name="business_description" rows="2"></textarea></div></div>
     <div class="field"><div class="lbl">Registration number</div><div class="ctrl"><input type="text" name="registration_no"></div></div>
@@ -932,6 +948,7 @@
             <option value=""></option>
             <option>Brick</option><option>Stone</option><option>Concrete</option>
             <option>Steel frame</option><option>Timber frame</option><option>Mixed</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Perimeter walls</div><div class="ctrl">
@@ -942,6 +959,7 @@
             <option>Precast</option><option>Palisade fence</option>
             <option>Electric fence</option><option>Wire fence</option>
             <option>None</option><option>Other</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Property adjacent to open area</div><div class="ctrl">
@@ -950,6 +968,7 @@
             <option>No</option>
             <option>Yes - Near highway</option><option>Yes - Near open field</option>
             <option>Yes - River/stream</option><option>Yes - Park</option><option>Yes - Other</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Property occupied</div><div class="ctrl">
@@ -957,6 +976,7 @@
             <option value=""></option>
             <option>Owner occupied</option><option>Tenant occupied</option>
             <option>Mixed occupancy</option><option>Vacant</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Occupation classification</div><div class="ctrl"><input type="text" name="occupation_class[]"></div></div>
@@ -966,6 +986,7 @@
           <select name="risk_profile[]">
             <option value=""></option>
             <option>Low</option><option>Moderate</option><option>High</option><option>Very high</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
       </div>
@@ -1000,9 +1021,9 @@
 
   <div class="cover-group-header">Fire &amp; Property</div>
   <div class="cover">
-    <label>Fire — Stock <input type="checkbox" name="cov_fire_stock"></label>
-    <label>Fire — Building <input type="checkbox" name="cov_fire_building"></label>
-    <label>Fire — Miscellaneous <input type="checkbox" name="cov_fire_misc"></label>
+    <label>Fire - Stock <input type="checkbox" name="cov_fire_stock"></label>
+    <label>Fire - Building <input type="checkbox" name="cov_fire_building"></label>
+    <label>Fire - Miscellaneous <input type="checkbox" name="cov_fire_misc"></label>
     <label>Office contents <input type="checkbox" name="cov_office"></label>
     <label>Furniture <input type="checkbox" name="cov_furniture"></label>
     <label>Business interruption <input type="checkbox" name="cov_bi"></label>
@@ -1013,19 +1034,19 @@
   <div class="cover-group-header">Theft, Money &amp; Glass</div>
   <div class="cover">
     <label>Theft <input type="checkbox" name="cov_theft"></label>
-    <label>Money — on premises <input type="checkbox" name="cov_money_prem"></label>
-    <label>Money — to/from bank <input type="checkbox" name="cov_money_bank"></label>
-    <label>Glass — on premises <input type="checkbox" name="cov_glass_prem"></label>
-    <label>Glass — shop fittings <input type="checkbox" name="cov_glass_fittings"></label>
-    <label>Glass — display windows &amp; signage <input type="checkbox" name="cov_glass_signage"></label>
+    <label>Money - on premises <input type="checkbox" name="cov_money_prem"></label>
+    <label>Money - to/from bank <input type="checkbox" name="cov_money_bank"></label>
+    <label>Glass - on premises <input type="checkbox" name="cov_glass_prem"></label>
+    <label>Glass - shop fittings <input type="checkbox" name="cov_glass_fittings"></label>
+    <label>Glass - display windows &amp; signage <input type="checkbox" name="cov_glass_signage"></label>
     <label>Fidelity <input type="checkbox" name="cov_fidelity"></label>
   </div>
 
   <div class="cover-group-header">Transit, Accidental &amp; All Risk</div>
   <div class="cover">
     <label>Goods in transit <input type="checkbox" name="cov_git"></label>
-    <label>Accidental damage — building <input type="checkbox" name="cov_acc_building"></label>
-    <label>Accidental damage — inside premises <input type="checkbox" name="cov_acc_premises"></label>
+    <label>Accidental damage - building <input type="checkbox" name="cov_acc_building"></label>
+    <label>Accidental damage - inside premises <input type="checkbox" name="cov_acc_premises"></label>
     <label>Business all risk <input type="checkbox" name="cov_bar"></label>
     <label>Personal all risk <input type="checkbox" name="cov_par"></label>
   </div>
@@ -1047,9 +1068,9 @@
   <div class="cover-group-header">Electronic &amp; Vehicles</div>
   <div class="cover">
     <label>Electronic equipment <input type="checkbox" name="cov_elec"></label>
-    <label>Motor — private type <input type="checkbox" name="cov_private"></label>
-    <label>Motor — LCV &lt; 3 500kg <input type="checkbox" name="cov_lcv"></label>
-    <label>Motor — commercial &gt; 3 500kg <input type="checkbox" name="cov_cv"></label>
+    <label>Motor - private type <input type="checkbox" name="cov_private"></label>
+    <label>Motor - LCV &lt; 3 500kg <input type="checkbox" name="cov_lcv"></label>
+    <label>Motor - commercial &gt; 3 500kg <input type="checkbox" name="cov_cv"></label>
     <label>Motorcycles <input type="checkbox" name="cov_moto"></label>
     <label>Busses <input type="checkbox" name="cov_busses"></label>
     <label>Trailers / caravans <input type="checkbox" name="cov_trailers"></label>
@@ -1058,15 +1079,13 @@
     <label>Houseowners <input type="checkbox" name="cov_house"></label>
     <label>Householders <input type="checkbox" name="cov_holders"></label>
   </div>
-  <div class="hint" style="border:none;background:transparent;padding:8px 4px;margin-top:4px">*Contractors All Risk requires a separate application form — please request from your broker.</div>
+  <div class="hint" style="border:none;background:transparent;padding:8px 4px;margin-top:4px">*Contractors All Risk requires a separate application form - please request from your broker.</div>
 
-<div class="banner">Fire — Stock</div>
+<div class="banner">Fire - Stock</div>
   <div class="hint">Cover for stock held on the premises (separate from building cover).</div>
   <div class="grid">
     <div class="field"><div class="lbl">Stock sum insured</div><div class="ctrl"><input type="text" name="fire_stock_si" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="fire_stock_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option><option>R 25 000</option><option>R 50 000</option></select>
-    </div></div>
+
     <div class="field full"><div class="lbl">Type / description of stock</div><div class="ctrl"><input type="text" name="fire_stock_desc" placeholder="e.g. consumables, finished goods, raw materials"></div></div>
   </div>
 
@@ -1089,17 +1108,16 @@
     <div class="doc-title">Commercial Proposal Form<small>Authorised Financial Services Provider</small></div>
   </div>
 
-<div class="banner">Fire — Building</div>
-  <div class="hint">Fire cover for the building structure — separate from stock and miscellaneous contents.</div>
+<div class="banner">Fire - Building</div>
+  <div class="hint">Fire cover for the building structure - separate from stock and miscellaneous contents.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Building sum insured</div><div class="ctrl"><input type="text" name="fire_bldg_si" placeholder="R"></div></div>
     <div class="field"><div class="lbl">Bond holder</div><div class="ctrl"><input type="text" name="fire_bldg_bond"></div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="fire_bldg_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option><option>R 25 000</option><option>R 50 000</option></select>
-    </div></div>
+
     <div class="field"><div class="lbl">Number of geysers</div><div class="ctrl"><input type="number" name="fire_bldg_geysers" min="0" placeholder="0"></div></div>
     <div class="field"><div class="lbl">Power surge cover</div><div class="ctrl">
-      <select name="fire_bldg_surge"><option value=""></option><option>Not required</option><option>Up to full sum insured</option><option>R 25 000</option><option>R 50 000</option><option>R 100 000</option></select>
+      <select name="fire_bldg_surge"><option value=""></option><option>Not required</option><option>Up to full sum insured</option><option>R 25 000</option><option>R 50 000</option><option>R 100 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Year built</div><div class="ctrl"><input type="number" name="fire_bldg_year" min="1900" max="2030"></div></div>
     <div class="field"><div class="lbl">Roof type</div><div class="ctrl">
@@ -1113,14 +1131,16 @@
         <option>Thatched</option>
         <option>Mixed (specify in description)</option>
         <option>Other</option>
-      </select>
+      <option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Lapa on premises?</div><div class="ctrl">
       <select name="fire_bldg_lapa_present">
         <option value=""></option>
         <option>No lapa on premises</option>
-        <option>Yes — see details below</option>
-      </select>
+        <option>Yes - see details below</option>
+      <option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Lapa type</div><div class="ctrl">
       <select name="fire_bldg_lapa_type">
@@ -1128,7 +1148,8 @@
         <option>N/A</option>
         <option>Thatched</option>
         <option>Tiled</option>
-      </select>
+      <option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field full"><div class="lbl">Lapa location</div><div class="ctrl">
       <select name="fire_bldg_lapa_location">
@@ -1137,28 +1158,25 @@
         <option>Attached to dwelling / house</option>
         <option>Less than 5 metres from house</option>
         <option>More than 5 metres from house</option>
-      </select>
+      <option value="custom">Custom...</option>
+          </select>
     </div></div>
   </div>
-  <div class="note"><b>Important:</b> Please always disclose thatched roofs and lapas (whether attached or freestanding). Insurers verify roof and lapa details against satellite imagery — undisclosed thatched structures cause the entire underwriting process to restart.</div>
+  <div class="note"><b>Important:</b> Please always disclose thatched roofs and lapas (whether attached or freestanding). Insurers verify roof and lapa details against satellite imagery - undisclosed thatched structures cause the entire underwriting process to restart.</div>
 
-<div class="banner">Fire — Miscellaneous</div>
-  <div class="hint">Items not falling under Building or Stock — e.g. external structures, signage, fencing, paving.</div>
+<div class="banner">Fire - Miscellaneous</div>
+  <div class="hint">Items not falling under Building or Stock - e.g. external structures, signage, fencing, paving.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Miscellaneous sum insured</div><div class="ctrl"><input type="text" name="fire_misc_si" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="fire_misc_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option><option>R 25 000</option></select>
-    </div></div>
-    <div class="field full"><div class="lbl">Description of miscellaneous items</div><div class="ctrl"><input type="text" name="fire_misc_desc" placeholder="e.g. external signage, walls, fencing, flagpoles"></div></div>
+
+    <div class="field full"><div class="lbl">Description of miscellaneous items</div><div class="ctrl"><input type="text" name="fire_misc_desc" placeholder="e.g. external signage, walls, fencing, tenant renovations"></div></div>
   </div>
 
 <div class="banner">Office Contents</div>
   <div class="grid">
     <div class="field"><div class="lbl">Office contents sum insured</div><div class="ctrl"><input type="text" name="oc_si" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="oc_excess"><option value=""></option><option>R 1 000</option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option></select>
-    </div></div>
-    <div class="field full"><div class="lbl">Description of office contents</div><div class="ctrl"><input type="text" name="oc_desc" placeholder="e.g. desks, chairs, filing cabinets, office machines"></div></div>
+
+    <div class="field full"><div class="lbl">Description of office contents</div><div class="ctrl"><input type="text" name="oc_desc" placeholder="e.g. desks, chairs, filing cabinets, office machines, machinery, electronics"></div></div>
   </div>
 
 <div class="banner">Furniture</div>
@@ -1191,10 +1209,12 @@
   <div class="hint">Loss of income / gross profit / revenue resulting from a covered insured event. Choose 6, 9 or 12 months indemnity period.</div>
   <div class="grid">
     <div class="field"><div class="lbl">BI cover basis</div><div class="ctrl">
-      <select name="bi_basis"><option value=""></option><option>Gross profit</option><option>Gross revenue</option><option>Loss of revenue</option><option>Increased cost of working</option></select>
+      <select name="bi_basis"><option value=""></option><option>Gross profit</option><option>Gross revenue</option><option>Loss of revenue</option><option>Increased cost of working</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">BI indemnity period</div><div class="ctrl">
-      <select name="bi_period"><option value=""></option><option>6 months</option><option>9 months</option><option>12 months</option><option>18 months</option><option>24 months</option><option>36 months</option></select>
+      <select name="bi_period"><option value=""></option><option>6 months</option><option>9 months</option><option>12 months</option><option>18 months</option><option>24 months</option><option>36 months</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Gross profit / revenue (annual)</div><div class="ctrl"><input type="text" name="bi_gp" placeholder="R"></div></div>
     <div class="field"><div class="lbl">Accounts receivable sum insured</div><div class="ctrl"><input type="text" name="accrec_si" placeholder="R"></div></div>
@@ -1204,33 +1224,37 @@
   <div class="hint">Maximum amount that can be stolen before armed response arrives on the premises.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Theft sum insured</div><div class="ctrl"><input type="text" name="theft_si" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="theft_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option><option>R 25 000</option><option>5% of claim min R 2 500</option><option>10% of claim min R 10 000</option></select>
-    </div></div>
+
     <div class="field"><div class="lbl">Burglar bars</div><div class="ctrl">
-      <select name="sec_bars"><option value=""></option><option>None</option><option>On all windows</option><option>On opening windows</option><option>Spanish bars</option></select>
+      <select name="sec_bars"><option value=""></option><option>None</option><option>On all windows</option><option>On opening windows</option><option>Spanish bars</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Security gates</div><div class="ctrl">
-      <select name="sec_gates"><option value=""></option><option>None</option><option>On all external doors</option><option>Selected doors</option></select>
+      <select name="sec_gates"><option value=""></option><option>None</option><option>On all external doors</option><option>Selected doors</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Alarm</div><div class="ctrl">
-      <select name="sec_alarm"><option value=""></option><option>None</option><option>Yes — Linked to armed response</option><option>Yes — Stand-alone</option></select>
+      <select name="sec_alarm"><option value=""></option><option>None</option><option>Yes - Linked to armed response</option><option>Yes - Stand-alone</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Armed response company</div><div class="ctrl"><input type="text" name="sec_armed" placeholder="e.g. ADT, Beagle Watch, Fidelity ADT"></div></div>
   </div>
 
-<div class="banner">Money — On Premises &amp; To/From Bank</div>
+<div class="banner">Money - On Premises &amp; To/From Bank</div>
   <div class="hint">Money cover split between on-premises (in safe) and money in transit to and from the bank.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Money on premises (in safe)</div><div class="ctrl">
-      <select name="money_premises"><option value=""></option><option>R 5 000</option><option>R 10 000</option><option>R 20 000</option><option>R 30 000</option><option>R 50 000</option><option>R 100 000</option></select>
+      <select name="money_premises"><option value=""></option><option>R 5 000</option><option>R 10 000</option><option>R 20 000</option><option>R 30 000</option><option>R 50 000</option><option>R 100 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Money to/from bank (transit)</div><div class="ctrl">
-      <select name="money_bank"><option value=""></option><option>R 5 000</option><option>R 10 000</option><option>R 20 000</option><option>R 30 000</option><option>R 50 000</option><option>R 100 000</option></select>
+      <select name="money_bank"><option value=""></option><option>R 5 000</option><option>R 10 000</option><option>R 20 000</option><option>R 30 000</option><option>R 50 000</option><option>R 100 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Safe make / model</div><div class="ctrl"><input type="text" name="money_safe_make"></div></div>
     <div class="field"><div class="lbl">Safe SABS rating</div><div class="ctrl">
-      <select name="money_safe_rating"><option value=""></option><option>None</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option></select>
+      <select name="money_safe_rating"><option value=""></option><option>None</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
   </div>
   <div class="footer">
@@ -1251,12 +1275,12 @@
     <div class="doc-title">Commercial Proposal Form<small>Authorised Financial Services Provider</small></div>
   </div>
 
-<div class="banner">Glass — On Premises, Shop Fittings &amp; Display Windows</div>
+<div class="banner">Glass - On Premises, Shop Fittings &amp; Display Windows</div>
   <div class="hint">Glass cover split between on-premises (general), shop fittings, and large display windows with signage.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Glass on premises</div><div class="ctrl"><input type="text" name="glass_prem" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">Glass — shop fittings</div><div class="ctrl"><input type="text" name="glass_fittings" placeholder="R"></div></div>
-    <div class="field full"><div class="lbl">Glass — large display windows &amp; signage</div><div class="ctrl"><input type="text" name="glass_signage" placeholder="R — include exterior signage and large windows"></div></div>
+    <div class="field"><div class="lbl">Glass - shop fittings</div><div class="ctrl"><input type="text" name="glass_fittings" placeholder="R"></div></div>
+    <div class="field full"><div class="lbl">Glass - large display windows &amp; signage</div><div class="ctrl"><input type="text" name="glass_signage" placeholder="R - include exterior signage and large windows"></div></div>
     <div class="field full"><div class="lbl">Description of glass items</div><div class="ctrl"><input type="text" name="glass_desc" placeholder="e.g. shopfront window, internal partitions, neon sign"></div></div>
   </div>
 
@@ -1267,26 +1291,25 @@
   </div>
 
 <div class="banner">Goods in Transit</div>
-  <div class="hint">Cover for goods on the road — to and from clients (separate section).</div>
+  <div class="hint">Cover for goods on the road - to and from clients (separate section).</div>
   <div class="grid">
     <div class="field"><div class="lbl">Annual carryings</div><div class="ctrl"><input type="text" name="git_annual" placeholder="R"></div></div>
     <div class="field"><div class="lbl">Limit any one vehicle</div><div class="ctrl"><input type="text" name="git_limit" placeholder="R"></div></div>
     <div class="field"><div class="lbl">Territorial limit</div><div class="ctrl">
-      <select name="git_territory"><option value=""></option><option>RSA only</option><option>RSA &amp; neighbouring countries</option><option>SADC region</option><option>Africa-wide</option></select>
+      <select name="git_territory"><option value=""></option><option>RSA only</option><option>RSA &amp; neighbouring countries</option><option>SADC region</option><option>Africa-wide</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="git_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option><option>R 25 000</option></select>
-    </div></div>
-    <div class="field full"><div class="lbl">Description of goods carried</div><div class="ctrl"><input type="text" name="git_desc" placeholder="e.g. customer deliveries, raw materials between sites"></div></div>
+
+    <div class="field full"><div class="lbl">Description of goods carried</div><div class="ctrl"><input type="text" name="git_desc" placeholder="e.g. customer deliveries, raw materials between sites, electronic devices"></div></div>
   </div>
 
-<div class="banner">Accidental Damage — Building &amp; Inside Premises</div>
+<div class="banner">Accidental Damage - Building &amp; Inside Premises</div>
   <div class="hint">Accidental damage cover split between the building structure and items inside the premises.</div>
   <div class="grid">
-    <div class="field"><div class="lbl">Accidental — building (structure)</div><div class="ctrl"><input type="text" name="acc_building_si" placeholder="R"></div></div>
-    <div class="field"><div class="lbl">Accidental — inside premises (contents)</div><div class="ctrl"><input type="text" name="acc_premises_si" placeholder="R"></div></div>
+    <div class="field"><div class="lbl">Accidental - building (structure)</div><div class="ctrl"><input type="text" name="acc_building_si" placeholder="R"></div></div>
+    <div class="field"><div class="lbl">Accidental - inside premises (contents)</div><div class="ctrl"><input type="text" name="acc_premises_si" placeholder="R"></div></div>
   </div>
-  <div class="note"><b>Standard cover:</b> First amount payable — R30,000 or R50,000</div>
+  <div class="note"><b>Standard cover:</b> Average standard cover R30,000 or R50,000</div>
   <div class="footer">
     <div class="footer-left"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAsCAYAAAAgjfcKAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAxf0lEQVR42u29d5xV9Z3///x8Trn93qnM0HvvCIqKAiooKsYWK8YYy6Yn32w22WyySTYbk5hsNonpMYluYiGuDUVUqggiSGfooPQyvc8t55zP5/fHuXNnBoZhUPb3W7+/nMfjPuY+7pzyKe/6epcjtNaaLg6FRikFSmMYEiEkAFprPM9DSIEhDT7I4T85+3ghEHy4Q2uN1hohBEJk76bxxw9IQ/L34+/HuRyiKwbRWqO0xpBthJVKpdFAKBjoSJiAFB+OxJXSaDRSynNmllbGaD1cz0UrhWXZXZ53zuPrsFwaEEgpznpPz1O571JKzmUIWoPS6kxbiBD4QuGcrvOvOduedX4PgSE7v85Tp8yz0/8Lf5+za3e2a5VuW3cpOl/r7p0D+pS5nG0NzsggSilkljE2bt3LgtffZuPWfZRXVqMVFBblMWnMQK6ffSnTLhqbm2AbM/nE09VR35Im7XqYQhALW1iG2WGx2jNmdxijsqqCHdt3cPDwQWobalBKEQqE6Vnai+HDhzNyxEgEAqV0h4056zMArTxkF5qy8/F2tQZnX59zOw88pX3C1aCFRnTz/v7YjbZHaUBoPMUZGUHjE5sUslujP9MsNDr7+7nsx7lf0xU9Ke3frzOm6pRBWm9WXl3Pdx7+Pc8vWk1Ti4dtSQzDykpED8dxCARsrr1iCg9/6wEG9C1px1hn3thWov7EL+ezvOw9EuEgkajNmNJirpk0krkXjCIUsM7KJK33cT2XpcsWs3b9WlpaWjAMIyulBUopPOUhEAwaMJjr5syld69eKK3PQeP5c9mx5yCr1m3nyNFyXEeRnxdj7Mg+XDp1PHnxGFppRDuC0ton0saWZl58dRWOqxBScNOcaeTFo74UFWebHxyrbuTVLTuxTDNnkgqtERqikRADi/IY3783hiF9SQpIAXuPVbBs13uEbLvVnkVrjdSaaCjMwJICJvXviZAST3sgJMLnLsBDCpMjNXWs2P4e+49XkfYcCmJRpgzqy4zRA5DC6DDnxmSKF98tI6k1ltLMvWAURYlolgAFruPy3NqtpBR4rkdxNMDcC8cihSSZyfDSujJaPIXQmhumjKE4FgFg66HjrNt7EC0ls8cNZ0BxXpY5jRwNrN7xPrtOlKPRTBs5iJG9StFa+TSAwhAG75dXsWL7+xyoqMFRHiWJBNOG9eXCYf3PaF2YnXGTISX7Dhzjzof+jW27j1KYF6eowJcDApkVCf5GKKV44fU1rN+2j/m//yaTxg3toH26OhpTGSqbWkhpTaauibKDlcxfs4NJ/XvwnbuuYtbYkWdkktbJJFNJnpn/FLv27CIcCRGJRPxJ6qykyU5Ya837h97nscd/z5233cnwoSPOOs5W09FxHL758B/4r2eXkUplUJ4vrYUlCUjo37uEf/2ne7h17gxUO02jlMYwBEve2sK9n/0JiUSU+tp6jN8a3Hv7bDxP0ZX7pjQYQvDeyXI+/bsFBAOWv+nZMQs0phAYlsmIXvn8681XMmfiKDKuh2EarNl/iM/96nnCsRhKu0ghc9LXEALbshjTu4Bv3DKLq8cPw1UuUhhZGjD5w9K1/PD5FZQ3JdFK4WqwpMCWmqnDB/Lo/TcwrLQYz1MYhqQumeSr//UKdUmJQYrxA3tSnIjheA5B0+bHr67kX59aQiQUpDmV5m9fuTPnvzYk0/zjX9+goqmZAIIpg/rlGGR52T6+8ucFYAa5efIInv3aPWgtkK30KgR/XbWePyzZDHg89tlbGdW7FEcpJBJDSH780pv8fNFqalMptCdQaCyhCRoG11wwkp/fdwPFsfBpTCI7KK6sqqmpb+Lezz7M7n0nKS1KILWHUpqGphQVNTVUVtVR15REeRqUpjg/RnlFHXd95t85fLQCIQRe174/AJZpErRtwqZBLGiSFwsSTwTYeryGW378NL9b8g6GlB1s01M13XMvPMuuPbuIxWMgJFopWlpaaE62kEwlaW5uJpPJoFGEQgFc12H+s09z/MRxpJR0hVH4Ukrw8M+e5qe/fQnLDmJaFvF4kJ4lCSKWhZAWx2sauO3+7/OnpxYipdE2XuHf+5U31hCJRykoiBMvyGPh4ndydnZ3DtMwicfD5McCxKMxbMPAkgJTGDhokJLth+q462dP89au97ANf4ODpk04FiU/FiIWjmBIiSUlhpS42gdgNh6q5db/fIKFm3diSpOM52FIyePL1/OZPy2gyVEETINo2KZ3IoxpWJjBCG/uPMid//EkJ+sacxrEEAbxaJTCqE08FsWQVm4cy8v28ZOXVtKnRz4oxSN3X8NtF4/H9bys32CQiAUpioZIxGJIs21tQpZNKBphQHGcRVv38MyqrZhS4mqV06jBUIBENEBeNEzAsnIOlCklP1qwgn9++jUUYEuL/HCQ0ngYYRoQjDB/TRkP/no+KddrMxhO1yDCt7MNg0d+8RSbyt6jR3ERjpNBYZBqambyhCFcOHkMppSs37ibNZt2EQ7YaBcSsTCHjlTx7Uf+yBO//BdQirN5oo0tLTQ0NuN6HgoIBUyChkk0KPCUyT8+vpDieIhbLprQQdq3ft+w4V22bd9GLB7D8xQajeu4TBg7geHDRxIIBKioOMmGTRuorq0iEAhiWRapVIpXFy3k/vvuz6FynTKHNKiuruPpF5ZRUlJIpiXJjVdfzOcfupm8eJCDRyr57RMvsuC19Vx20WiGD+6fM9201hjSoLyylrff2Uo4YJPJZAgGbNZt3MmBIycY2Ldnt/wh7du0pB1JIgy/+dQNRIMhHE+z5+gJ/rDkXRqkR22zwZ+XbODykYPbQBYUyZTD0J6FfOvWy1HKtwOOllfz2JtrOVyXxs0E+cnzy5g1dhiWYXCiroEfvLCMgkgEx/WYPWYAX7lxJsXREKv3HOJ78xdjxUJsO1bJowvf4gfzrssinoCryWgPqTSuVmgNx+sb+cITL2GbAaqbUlw/aQhfueFylOfm9lQD2tO4SmPidCBST4N2NY6nCQUCPPzfS5g1bjA94lFcpTAArQSOyrr/WaFnmyb7jlfw6MJVFOcnSGYy3DV1DA9ecynRgMmbZfv4/vPLieTn88b2AyxYW8bt0ybiegozi3ia7REaaRi8f+QETz//JnmJBK6bQQvwnBSPfOchHrzn2g6Q7hPPLeGfv/0YSvuoUX5ejIVvrGdD2W4mjz27CXPdpBEMKMxDmga1jc2sf/8wR+syJMIWhgAzFOQbT77BJcMHUZoXz6k/KSUZJ83atasJBAJZGFejPY9bbryFSRMn554xasQoJk+awjPPPs2BQwewbZtgMMiBA++xZ+9uRo4Y3ek4ffMGjhyvpqEpCUii8RA/+vdPU5KfAGDwgL5cfOEo/vhfr3Df3dcTi4R8e1sIPM/DMAyWr9rEkZM1FOXFSaYdgkGLypp6Xl+2kc988vrsZnbTF1Ia2zS57oJxBE1/H66fNJJAIMg//+U1gkGTQ9UN7cw8jQRc5VIUC3D9xNEdbnfB0H7M/dHjSNtmX0U9+09UMbpvKW9s3cORuiaioSD9CmI89rnbSYSC/pxLi0m7ii8/8TJ5kSALN+/l6zdfSSIc7MRr8xG2f3p8AQfLmwkFDAYVxPjZAzdhSInW0H1wX+NpCNkm71fX8/B/L+PRB25EKwFGB37qgLYteHcndUmPYEAycUBPfv3pW2jFx4b1LCaZ8fjy46+AYfCnZeu57dIJHQSWbFt7X70sWbGRytoGLNNESklTQ5J//PQtfPreuQg0ruvguh6e5/HJW2fxza/eSVNzE1IYSCFoacmw8I11OQl2JngR4PNzpvHbT9/Krx+4iaf/zzyWf+ez3D5lOM3NDkpAzDQ4XNXI4ys3Ik6B8o4cPUxFVSWmaSKEIJ1Kc9GUqUyaOBnPUyjlobTC8zyi0Ri33nQboWA4y0y+DVq2fVtuIc9o3gR8Z98UgnTK4eCh8tyGua5LwDT54kMfJxYJ4SqVc/xbne+X31iDlBYKxdQLfAI1TYtFS97xtU130LRWv1mAUOC6bi5KBWAY4EqBUIpISLbTiiIXY8ooyDguKccllXFxXI/BfYopCEcQnkvGcalpTgKw+f3jGMKgKZ3hijGDSISCZBwX11N4SnHtxOH0iEVAG5ysb+T9yuq2/Rb+U4UnKIqF+NObG3ju3R3EIhYZz+E3D91I70QcT7UiYLrbSJQAUp6iKBLiiVUbWbbjfWzLyP1Pd4iv+cfGgycwTchkUtw4aSQSQdp1cJWHqxR3XDaRn3xyDo/Mu5rbpo3D1aoDeCPbHu5/3VK2D0P69nPGUfQoiXPf3ddnCcvANC1M00AIiVIe99x2Nf37lpJKZ0AITMtg6/b3umVjK+1DjJ7y//YtyuOxL9zJ5aP70ZJ0UEJgBg0Wb97lE187n+Ho0WM4rosQAq0VpmkyftwEH6WRAikNpJAYhoFSivz8fIYMHkIm4/hOqmlw4uRJHNftlEh9tFQzoG9PepbkkfJclIKHvvQjHp//KkeP+8xpZKFp1/Mwcyagj+wcOV7BOxt3EAxYBANBvv3Vu8lPRLAtm03bdrPnvSM5pK17BCJxtceuYxXsO1FB2eEKnnxrA796dQ3RQIC6phZumDSyg5OpAZQkKExsyyRomQRtE8s0WLV1HzUNjWjTImzZlObHADhe04A0BCgoLYijtb+XhuH7L/nRCIXxGK7WZByPqrrGDqa7qyESMlm4eQ/fn7+EvGiExmSaf799FpePGoyjVG6tzg3ehbyAhQMIIfn206/RlEr5NKE7D1VUNDRiSImQJr175PsIX9YPM6WgJBHlq3Nn8rUbZvDAlVOxTkFNzLbAjD/Qk5U1OQ5yHIdeJaUU5seyxNmegAQgyYuG6duzmMPHawgBhiGpqWtEaf+crgwI6Ue4cgvleC6WYfLl6y5l1c5DKK0JGiaHK+upqG+kV34ClR1EY2NjTj0rpbEDAcKRcJZhdKeIVDQW8yWclFiWSTLZQjKZxIrFTkMvhJA4nkc0FOSrn72F+7/0n8TjeZysauSL//JbehY+w7BhfZk5bSK33nA5/XuX5vwPpRUSg8XL11NZ3Yhtmowe3p8LJw5n/KjBHDm6jrq0x6Ilaxk5pB/6bICGrz4xTahrcbnpx0+C9FAe1KdcgpZEIvjWrVfxqaum4rhuFhL2pallCw5W1/DD55ehtUdaw+HKahZv24sIRmhsauLS0f0Y1KOwnV4CiSISsP0tEm1jNKXANAQaD6Uh7bVXdb5wSWvFw88uIaMEtikRnsLOhgjEOWiN9oHDxmSKeZdNZfexE6zcdZhNB0/yi1dX8c1bZnW6hp7WZFwXkAhcAobpU4xWoAUqSysqG8TVAizD8KcqTnPS/V99kzhLehqkMNtUoWivttu+CwESjcgOUinlE4mQ5xLnwpAGGhjaswf50RDNjospBM1pl4bmFL3yE7mlVUrl7qu1xjQMzOwGnMmsS7Y0k2xuRmpwPAfPUV1Kb9OQKKWYd8s1aCX59/98kuPHqzEsk6qGJirW72bFqi08+ocX+fZXP8H9d8/J2v8CtOKVxWuxLItMymHGtHG4rseMyybw0qLVBIMhFi1dx5cfusUXPpw9sKcFaKWpamzBFQIDjWmYSGFiCI+gYeK4Lna7gKvWmqCUHKtp4F9feNPXnkhMrQlHg6TSKfokQnz37msx2mLzWUi/nYmhO/KrUPo0k7m9WeJ5AoHAEOB6mnAgwMPPL+PqCYMZ1KPonIO1AnA8RXE0wrw753DZt35DNBLiF4veYd70ycRCQZT2MNuBLiI7F52leJ2dhJQm/+eJBax/7xjhQACtPDKuokc8wBNfuItoMOj7R6KTOMgZR3eWjTsnTjhLbkPS83A8D4TAA6T04wkfOJ8mu4FjR40lP5GHaflBSMuwCAYCnW5yK6EIKVCexz0fn83VV1zIgtfeYvnqzWzedoDjJ6uIJ+Kk0i6f+8bP6dEjztxZlwKw7/0jbNi6B9s0SBTa3HbjTEzT4JbrL+PHj86nrqGF7bveZ9vOA0wcOyQb7xFd7oFWioht8uAVlxKwTTKuorymniU79tKUlHxr/hscqq7mtw/deko+ncAyDHpFJFoIHKUQlk1LS4qLBpfyh09/nIE9CnCViynMdhJe4OkzRNHbDVW3EzI6u4dSClxtEBAaYUhcYVDT1MR3nl3OXz9/Oxp1bvQiwBSCmuYk4/v15L6ZU3hs2QaQmm/9bQlFsRBZq/CUgbbRpmpnuWw9WM6aHQewIyECpoXjZuiVH8FTuutA4f/k0RrSP5N96Xoetmmysmwftc1J8qNRUk6GHokIPRLxdtLtgzHIyJGjGTly9LlfLyWZTIYehXk8OO8GHpx3AxWVVSx4/R1++Mu/kU662GaAJ55ZzPVXXYoQ8PrS9dTUNRKJRinKL2T9pj2sZw/SkBQWFlBX30xTS4aFi9cyceyQbphZAk9BJGDyvTtnYYq2rVu9+wC3/+wZigvzeP6dnXx69gkmDeydAwFaHI+J/Up49IG5BKTkmTXb+I8Fq5CWQUpBn8JENtvAaOc7+iScTDk5q6JVBrqeD9Jo6ecxWZbZQcv4xoWkoaGGxz7zcVoyLl/600KKC8K8uG4bL188nhsuGJF11Lu5nxq0EEjpAzXfuOVKVpbt42BtC0u37iUWtImGIjQ0N7fbN4FhGDnacx0nlyIzqX8JWqUQhsXek42kMoK8SBjTME7Thh8+47E1WU6cLolFO65uTSLr7COFwDZNdh8p56evLCcYDCCER8ZxGN2vhEQ4mEu9+DDZvkqpDp/u5PAgwLb9pMd0JoPjuhQX5/PgPXP513+cR2NTI3bQ5NiJahzHRSnFwiXrMC2TgGlysrKW+z7/CPd9/sfc+5kfcujIMWzbxLZsXlvxLhnH8WHPLrNKQQiFqw0q61OkHZcWxyHjOkwbMZDBRflkHJe0p9l3vLIdiihQyiMSMBnbp5RhvXrw+TmX0qsgQsAwWLfnKE+9uRFDGrieA8CAgjw8pRDS4HBNnb+HnsqhWFVNLVTXN2EhCdqCkrxYThAJAUIaJFua+cSMC7h3+mTumzmZi4b0pLnFwbYCfO/Z16hrSWddK9VtDSKyCY5CCErjEb57+zVkHActBTXN6Syw0qaXDCkpSUTRngDlcai8zjfVXI8f3nsDb37vizwyby6pTAsZpcgLhQnbfjpPK53JzqRth083or2ep/FcD8/TvnRpr3I1SA3NqTSHq+s4XlvPsRr/43+v40R9I++VV/HHpev42E/+QnmjS1iaKATKg7umTczFJroaa3c0iZSyw6drhvLTXDxX8fAvnmTztv0EbBvLNHPSNhKzfQmrfEfZsgx27j3ElrL9hMNh0pkMdY1NeGgUHgpNQ0MT6bRLOGKxa+8BNmzZ2y00y0NioiiKRQhYJmHLwjYt9pyo5HBtAyHD9Jk5YJxmIXvZzOy041IYCXHHtEk0tiSJhE1+u2w9LRkHM4vgTBraG601sYDF8rJ9lDc0YVsmlumjPwvWlVHe3IzWgt75CQaVFHTQ1Fp7yIDgC3Om+T6QafK9O2ajFISDJmVHqnl04UqklHQTwDvN3s84DjdeNJqPXziKhsZ0Fu7Vp7kEEwaX+KkuQYuXNuzAcT0CloVtSBCCVzZuJ+1ItHIZ0acIITpmbpxmYmUyGdKpDOmAQyqVwUmnzzrkcMgmFg0SiQQATTQU6AC1GYZkedk+HvjdC8TCATx1qnMuSDsuVU1JQrZFxLQRBtQ3NjN7/BDmThqByhKrynKJ8hSO4+I6Lq7r4hju2c2Uc0pt9xPdNm7dzVe/8zve2biHv85/gwc/cT0XThpB2A6y98ARHvnls8SjEeobmxg2pC9CCF5e9A5NLWnCUjO4fylf/+Ld+IkdvvNuSoNfPvYSm3buI53WvLz4HS6ZMrojgH+aheE7vEnP5clV64kGAmgFx+oaeOqtTTSn02hpUhSymdi/TzukUeQMUyn8NHUN3D99Ek8sX0fKg7JDJ3jh3R3MmzYBpVxmjR/GkMI8jjRlONnYwid/+TRfvH46PSIhVu89xH8sWE4iGqO6tp6b5lxEPGB3oEtPGAQ8w5+xEDiux8wxQ7l72mj+/NZWimIhfr34HT42dSzj+/U8xa/RneBcup1X1I4JtObf7pjNW7v20+B4BE2J9uGinHS+Zcp4fvXyWpKmwa4j5XzyV/N5YNZFxCybZTvf449LNhKO2qQaMtx80ZjsZfJ0BhH4+umRbz9EbUMzpmGiPEU4HGgHXHUupX//06/48YWsRLBNAyk6cnNGaepbHFQ7Iu+w/UKSiIZ8B08Iaptb6FuUz0/vuxFpGL4jKMjFQi6bdhnjx03w/4d/TSQcOaPD/UFNx2TKYff+Y9i2TU1dC//24ycJBgKYUtCSSRGww2QyDpGwzZceugmlNYtXbiQaDdCcTHP9rEu46dpLT7v3scoq1mzeTSIWYcWqTaTSfhpKK3rSnuA0AikVlmnTnPb44p8XZrWpQGuPgG2iMWhuqOdbn7ieAcX5WRvcwJBgSHL7YUg/LtSvRwE3XTiGx5ZvIhyy+dPitdx2yTgkgoJImO/ccQ33Pvo0VijCO++dYN3Pn8Y2TFoyDnYwSH1dE5cM6ctn5lyai9wrAUKChUAaHjqrZX3oHf7l1lm8sW0vyYxH0pF8/5klPPv1T2TRMj/pUEgDIxeVywpQBFIYIASttCuFwFGaAT0K+NpNV/DlJ14nXBDBlCmk8HHnjOsxtGcR/3TTdL76l1eIx+O8snUvr23biylNko5L2LKprKnnH2ZOYeboISjl5fyWjhokiwmPGTGoU+WOFmcEHUqKCjqvtDlFSwQsScAyfAY5JbaTFQhkXI+qZJLJfYv54xfuZHCPfD8V5JScqcLCIgoLiz6QH9KZA98Z7q60x7SLxvLWwp/x3e8/wfJ1ZSDTNCVbUFr7JolOMnhwL374zQeZOHYoy9/ezNsbywjZIVzXYebMiXieyma8ttaiSGZcOgHbEjQ1t7BhcwWLV27ghtmX5DRue2TV8zwamzI4QQ3aD5gaIqdXMKXB4OI4n7/6WubNuADHdbBMC89J09TcgjQDNCUdVE4C+5DnA1ddyH+t2Ew6o3lz5wGeenMD911xIa7rcuvUsXjczvf/tpRD1Q1kPE2jyGBKhe043HrhaH76yesojITwsgmHeB5NzSnq0gpbO2jl5WJsSiv6FiT4+g0z+fQfF5AXCfDc2p387vU1fOaaS8h4iqaWJI3NKQwJnte2FylX0dTSDEKQTmdyYsOQvn/1wBUXsWjddhbtPIRy0mQcnYv2KuXxpeumYVuSn728muPpFC3KN3cDCLA0X5pzMT+4a46/Nqf60B3rQXSuqo8cFi7aiPNcquBabd9suvqza7Zw+0+eJBwJ42kPISRStipMjetpDK3pnZ/grmlj+coNM8iLhPzrhegYg2lP6O3xeSk4f0erg9uWp7Vr/2G27XiPk+XVJFMu0ViA4YP6MG3qWEKBIEpp9r93lE079xMybaQNs6ZPIWjbuThHa7q58mDJqvU0NadxXcWYEX0ZPXxQh4BlNnOD8oZGVu86gGUY7VFLtPYDs72LEozpXYJtGtkERV/qHqioZuOBo5gI4vEIM0cOOq20edmOfdQ1p8ATlOZHuHT4QFRrwE8KGluSrNx1iP0nq0l7aYqjUSYN7MWEgX1OqaHQNKcyLNu+H6UUGrh81CAKo+EcW2qtcDzNki27cLTEVYqikM2McUNIZVyWlb2H63loJDNGDyQ/EgJg7/FKth4+AQiGlxYybkDPbDBW+gFpKThYWcuG/UcRCCYN6snAkkK00miZrZ0Rksr6JlbvPsTByhoc5dAjnuDCYX0Y1asEtEYJOLUGUujzYLg3NDbher7n76d6+KnLIltbIAVseu8oj69YTzAYQOOSTkMy4yIFGELSpzDO1BH9mTqsDxE76NeS63MLJp3tyDgZHMdpVxehCQQCSGl2C57uynTrbg3M/+TR3SrM7vthZ17/VrI5X+bshxdlZ1sbfcY4U2tBV2dT+VAM0io97vvCI6xYs5W8eISmlhZGDO3Hi3/5AZYUWZv69Ck89dYGfvjSCvKivt9QFA8zplcpM0YP4rJRAwlYFp5yMaR5HjbaJ963165m2fIlhEIRlHKRGHzyE5+iuLi4W7Xqfk26OsU07FiT3golt87X6KJRRFudukZIecaYQHdqyzuvSde51BxxSv13Bxi7Pcp3yhha76FPiU7LD1iT3lpkd+r6dXVth3mcoYa8/TlnqknvdC5nqUk/L4HCurpmTlbUkkm7NDSlKS5spGMWlp9QqBQ4ys+3OlLdxI4j1eTFU7nA06sb9/GzRW8zZVBPvnnLlcwaPxxPeUghz4ukymQy1Dc24irPR6m06D4On8tXM84KJRtG97q8GN3ssiKyWvaDBEiNs6zb2TROd+5xTvfr4pwz/d6dMZyvc07b8/PBINKS2LaJaZvYloFpGp0Mzs8GNaWBISVBwyBom4Qsk7BtEQ8FKYpHiEeCbDpYza0/eYrvv7DYD2Bpj/OB4AohMU0T0/A/hmny/72B8Pfjf/NxXjSIVtr/aN39WEQugu6nELTWe3gowiGB0EG+89/LcByPf7t9TtZZ//D83DrGD2JZtr+uVaOJTkyS7qa+dHVuh5T1btr7p57X1XWnzuVM53R3Ludy3//fMQhCnAPC5WMsKSdDsjlJg2HguB5KawKWSTQQwNUeSihKYwX86OW3GN23F7ddMt53tM7pWefJCcw5caJTghCIdrVJ3SuAQnR9bvtuId0lstPTfESXTHRe5nKKP3rG+35EGcX8f/uBUvqBvY9dOIr+pUVYhkEmk+FYXR0LN+1l/b7jREMhTKVwDZdgIMTD/72EK8cPozAc7FZa+Pk+Wje3vPwElVVVuJ5HIhGnZ89eBO1gNuaTbX3T1EhdfS1GtvZAt3NGtVKEwmHyE/loramoLMdx3ZztrdFYpkUikcC22rIRqqqqSKWTlJSUYpnWGRC6NCfLTxIJRyksKCSVSlJZVUFBfhGRSOS0uVRUVVBRUY7neeTnF9C7d2+M1jY62bnU1tXS1Nx0WgKfQOApRSwWIx6L59Au13M4fuwYNbV1GKaksLCIXqW9PtJaxOxc9dKh7OOsEzxDRVfnTo9feDWyTykj+5R2+N+Xrp3OzxYs58cvroRQ2C8htU12ldfywtotPHjlxTiehy2NbByge0G/D4vSNTTU88JLL7Br1w6UaKs5Lygo4JrZ13LBhAtySNnmLZt4ZdHL2LaN67pkA96YmCRbkkyePJm775yHVprnnn+Ow8cPZ1PZ26DkaCTCpAmTmDHjKsLBEFu3beGlRS/xwL0PMn7s+M4bWGzewDN/e4a7Pn43F0+9mKPHjvKb3/6KO+64mwsnX5irkW9paWHBwpfYsm2TX/ko/GBa7959uHHuzQzsPxBPeRjSYMXK5bzz7hpM02oLBgKWsGhqamL27NlcN+d6pBTs37+PBQtfoPxkOdIw8LIdRwYPGMzH5t5Iz569P5KaxOwcMvygaHN3xLGfmapO8QO0BkvC12++isrGJL9e8i55kRBaaUxD8vqmPTx45cV+2kJ3GffDguv48OrzC56jbHsZ18yaw8iRI5HSoLz8JG+uXMETTzyO+SmD8eMm5JAprRWzr7qa4sLibGGXXzzkeR75eXn+MkiB0g7FBQVce83cLJomSCWT7N27l8VLl1BdU8u8O+9h3LiJLF2+mLKyzYwfO/6UykeB0pqt27ZQkFfA6FGjczAphshC7K3nKZ5b8BwbN63nqpmzGT92PIZhcOz4MV5fvIi//OUJPveZL1BYWJiDcCzL5ua5NxMKh7PpPgKJxHVdiouLfU1TW8VT8/+KMCS3334nPUt74boe+/fvZ/HyN/jdH3/Hlz//FfLz8z9yTGKeShXllbUk05lc1zrTNOhZEkeK82iNtUYsT1koP0dL8+W5l/Hsu2UkU356RsCy2HOymrqWFvLCYbSGVCpJc6oFAyMXjY9FY5imef60hxRUV1eze88eLr3kUmbPujr3/969ejN40GBWv72avn37dYyAK83wocMpLenZxRL4hViRcJhRp9SoTL5gCpFYmJWr32Lm9Cvo07sPgwcNZt++vdQ31JOIJzr4EuXlJzh44AATJlxAPB7PrbHuYNpKDhw8wJbNm7hixpXMvXZuh7n0KC7ml7/5BW+uXsmtN96SExJSSMaOGUcgEDjjXPbs3UNdfR33f+ohxowck/u9X99+lPYq5eTJE0QikY+2Bml1Cr/49UdZvmYriXiMlmSaIQN68sZzPyLU2tVP/M9Fi/2cHU3vgjhje/dk5e5DxEwLQ0rqmtPUNCbJC4cRAtZteJfXl75GPBz1azs8zf33PUivXr3O60akUyk8z6NHj9KsrZ/BMAwEkEjkcd211+dMnfbPTKWSWROro89kGEaH85TSubZFIHLmzcgRo1ixegXllSfp07sPY8eOY/uOMvbu3cuUyVM6MMiOHdtJpzOMGzuhy7ns3bsH0zC48IKpuYCmlBKtNAP6D2TM2LEcOXKYTMbBtq3cM1qSfjvX0+v2/ZhPc0sLlmnRo6hHdi+U3/QBwajhoxg1fNRH1gdpV8DrL0bK8WhJOSTTaZqTKZKpdLv2LGcgumymZavM+rDZKwJJ0DY7ViCe0lldK4WbcUg7Gf/jZtqSovX50XIAeYl8IuEI28q2kMmksS0bQxp+9qry2wp1GFc21hwORjBNE8u0/NhL9tORcaU/23b1KaaRbbfU1AgKQgE/H2nEsFEkEvls3b4511JVSonreWzbUUZpSQ+GDBzc5ZSqqiuJxaIkEonc9UKI3Gsh7rptHg/c90Ausi2yrB0OZ+didZxLa45ecUkP0k6GLds2+XOwTL+rjJR4ntftri0fCR/EEH7XCkMamIbRvWjvearDaL1LY9rh/ZPV2JbIplloQgGLaNg+xV+S7aDF7nDGOfRgymY3R6IRpl82nZdfeYnf/P5XTJk8lb59+lJUVEQ4FD5dIGSl7OayTRQcLfA1C6CERmIwdvQ4QqFQbjRKdORIz/M4efIES1csJT+RT98+vvmWSCQYPmIkZWVbqaqqorjIt/+PHjnC0aNHmX755QQCds4Z7+xIJpMEAoFcdeSpSjZgBwjYgTaCFgJXeaxdv4ZwIITKNoP2lCJgBxk3ZhymNBkxdASjRo7mtdde48TJcsaNHUev0l4UFBTmuqt85BmktQ7BMK2cA62UwrKttgUXHYmt1WFOZ7WMzjaMNgwz135TaT+X82wGjwKUq7Ask1fXl7HvRD3RqIUCPMelf1EpRbEYnudiGGYWetQdBP7ZOqW7rusTcAdAQp6VSa6YcSXhUIi33n6LBS8/D0AkEmXI4OHMuHw6vXv3aSMq7b+oZ/Wat/1071ZnH41pWAwaMJhQKOT7d5bJycpyfvGbR0F5uQKjmppqtNbcdsttxGKxHNGPHzeRd99dy+7dOymeNh0g1/xu7Jjx58XvOnX+nvJYumwpOotitXbTT8QLGDliFKZpYlsB5t1xD0uXL2bT1i1sK9uCJQ3y8/MZO3YC0y+b8X+HD4KEfn1LcLNJdKZhUFVdT2NTC4lYxFe4MovYZ5kolXEpr6jKtprxJU5RQSKXAGYIuoV+GYBhSda/d5hv/O11AgEJ2Xaoadfj0hEDMIQgrf0ynPz8/FyLFyEEjufQ1NKc7ch+eqxECEFNbTUim2KvtCJsBwmGgt2KgUy96BImT7qQ8soTlFeUs3//fjZt2cSevTt44L5/oG/ffjlO9TyXu267k969+6KUl+02L7KMFWmLi+C3K8rPy0dkU8T3vL+XvHiC++99gIL8Aj87OqvFhwwcREmPErZu38Zl06aTyWTYuauMvn360K9v/5zQOrsW1XQi8U6LwGvlYRsm//DAp4lH4yjdNhchBIGsJtJaE4lE+Njcm7jqitmUV5zkxMnj7NyxkzeWvs7Bwwe57xOfIhgIfoRRrOyYL5o4lN8/7msUO2Bz9GgFzy18iwfvvg7HcZHZHphKZaX9G2vYd+A40VgMAbiOywXjBvrBqLoGmtOuX9jSRUjZMk3qGhtZuHkXv35tPY0pTdgSZJBIzyU/ZHPHZeOzDOcTS69ePQmFQ20dF5Vi44Z3GTp4aM5pbt08wzCoq6tl3969BGwfjXEdh+LeRUQj0bPGUFrvZVomvXv1pXevvkyaMJkJEyby58cf462332Lenfe0mS0aEokE8Vi8Sx/HdT2KC4v5xF335H5+ZdHLrFq1iqamRvLzfFhUCr8/VyAQYPToUaxctYqa2hpqa2s4Xn6cG66/MVuO7HXZMDwQsHEcB9d1MQ2zU2I9NQ1HCEF+Xh6RcLRLIdK6RpFIhEEDBzNo4GAuvfgyXl+ymNdef4Wdu3ZwwcTJp4EZHxkGaW3OcMX0yfTt04OqmkYCtkkoEuZ7//FX+vUq4uqZF7VDYySr1m3jnx/+PVYwBHg4SpCIBrk22xvqd4vX8dOFqymMBXCV6MQP8CW9ZRo0JTPUJjPEQjZ2wNcUIWlwor6Rr15/KSN79cBTftdtpTX5eUUMHDCY7bvKCIXCBIJBynZsp2TlMmZOv6KD6VTXUM+zz/2N5mQLtm3nAn2jx4zJbW5XtRztg3Lt5zBsyHD69O1LeeXJnBnUSluu63c30SqL/In2Zl3b+5Fac9haxzDtkstYt3YdbyxbzAP3PnAaMY0bM4EVK1eybftW6urrsO0Ao0eNaTMJT5V47bREfl4BO3Ztp6mpiYAdyDFI67MXvPIi1VW1zLt7Xgc/xnGc7FyyDCVa08pljiE7rpHOVkYaTJ40meUrF1NVVfHR9kF8olEU5cf5h0/O5Wvf+x2lxcXYWpNMucz77A+5cfbFXDx1LFIK1m3Yzcuvvk3a09i236O2urKW++66igmjfTTFQ9HieIRchet10ZAg43cjLIiG/CbaShM0bCqampg2vD/fuPmqdm+EErnC/emXzWD33l253qymbfHGssXsf/89Rg0fSSgUpryykq3bt1JfX0PADiAQpNNpSkt6MnH8BWfVHq7rsq1sK71796GkR0lHzaIVyZYWwtHYaQxmWZb/WxeM51e66RxcqpQiPy+fiy+eyuIVS9n//n6GDu74QqK+ffozsF9/1qx9G8d1GTJ4GCXFpVlilx3fwXeKeTtk8FCWrlhK2fYyZk6fmZu3lJKq6greXruKMaMn5Jz41mttu3Uunc+jobGRnbt2MvmCSbnulq0vEWpJNuO4LoEsGvfRZRD8fBqlPD5z38d48+0NvL5sCyXF+QSEwlMGTy9YxZMvrQD8DuKxaAjb9De3rraJscN7891/+lROmopsFw1DCr9NfRdwKmi/jFJKPC2prK9n8pBSnvzCnSRCQV81S9nBee7btx8zZszi9cWvEotGQAuCgSAHDh5g//59uV5ntm0TsIMI4b+mAeBjc2/ybeJTXpt2aprJkSNH+OvTf6WkpJjr58ylf78BGKZBS0uSVWtWcfToUe66Y16H7F7DMKiqrsayAm0+CD4aFwwESMQTPqNL0eHZreddMvUy3ln3DitXrWDo4KFt12fr1UeNHsWyFUvQGIzNRtY7M13a19EopRgyZAhDhw7ltcWLiETDjBo+GmlIyivKWbDwRQwMrrj8ilPGI6ioqCAaTbY9Q/j3CwVDxGMJ1q5dzYsvv8je/buZeflMCgoKAU11dTULXnmRYCDIyBGjziqM/tfDvD5BSQIW/Oln/8I9n3uYpW9toTAvjm0ZFOUnsnhT6yJpXFdRUVvLuGH9efIP36KkOA/HcTGMbL9eoUEYCKm6hIkVfu/VdLOLZUrumzmRh+++nsJIKNfo4HS7V3PljCvIJFt4a9VKzICNZZl+Wa8I+O2EhZ9bprUmlUphWQFuv/U2Bg8c3KVp1cqEAwYM4J6757Ho9dd44onHCUfDWKZJMpnE9TSzrryaKZMvzN3LcRzS6TTz//aM7xO06wfb0pxkypQp3HXH3WitSbdk8Cz3NFs+Pz+Piy6cyuuvv0bZ5O2MHTOmAwOMGTWWpcuWEbBtRgwf0SnhaaVINidxnEyO4U3T4uO33Mb8Z+czf/4zxKIRDNOksbGRSDjKbR+/gz59+uQEnOM4NDY08Mc//iGXW9U6l+amJmbNms11c+b6gIHj8PY7b7O9rIxIOAxC09zcTDgU4fZb7qSkR8lHEsXqtOS27f1/ab7/8/n85elXqa5tQhoGhikBP0ClPId4NMytcy/nu1/7JMWFiVzBviEl33xqET94YTl5sTCuxxlfdyoQhAyT4kSIi0b051PTJ3Fp9i1JZ3vZZutYN23ayLI3l1JdUwVCI6SvwbTSaM+3hwcMHMic2dfSp3ffc26e3NzSxIEDBzhZfhLHcYjFYgweOJiePXt1GEd5eTlHjx3BtEwfGaRVnghcz6OgIJ+B/f3mDLt37UJIGDFiVEeoVUBTUyO79+yhuLCIAQMGntLMQbNj5w4sy2T4sOEdFrQVwWtsamT3nt0M6N+f4qIeHd7Z6LoOe/ft5djxo75ZXVjEsKHDicfjOUYUQnD48CEqq6sws62V2u+X67qUlpbSu1ef3O+VVZUcPHiAmpoaAIqKihg6ZBjxePwjm/J+xpr01jeEguC9A0d5ZfFaNmzbx8mT1WglKC3OZ/yY/syZfQljRwyktSNKa98qAew6Vs6+8ioCpkVXsVQpBMWxMP2L8ynM1qh7WdNEiu6/CjqZTLJr9w4OHHif6tpaPNclFArTo7gHw4YNY0gW4TqTWXVGFKuL1x1/1Da+q/F+mLn8T933fy2DtAYPWzsadklAngLpVwe2SrMPmvvrN1GWWene/bt0N0/sg25WZ1WIZyoOOlulYHu/wO9nLM/4vDNV5bUial2hb+21wZmuP19zad0DrTnrff+vYZC2xcw60Nn8nTP9drrk7X5pa1vF3oeTjq3Py70cspPf/n78/eju8f8A67u0qUE48K4AAAAASUVORK5CYII=" alt="SBS"></div>
     <div class="footer-center">
@@ -1313,7 +1336,8 @@
         <div class="field"><div class="lbl">Regular driver</div><div class="ctrl"><input type="text" name="v_driver[]"></div></div>
         <div class="field"><div class="lbl">Regular driver ID number</div><div class="ctrl"><input type="text" name="v_driver_id[]" placeholder="13-digit ID number" maxlength="13" pattern="[0-9]{13}"></div></div>
         <div class="field"><div class="lbl">Driver's licence code</div><div class="ctrl">
-          <select name="v_lic[]"><option value=""></option><option>A</option><option>A1</option><option>B</option><option>EB</option><option>C</option><option>C1</option><option>EC</option><option>EC1</option><option>Learners</option></select>
+          <select name="v_lic[]"><option value=""></option><option>A</option><option>A1</option><option>B</option><option>EB</option><option>C</option><option>C1</option><option>EC</option><option>EC1</option><option>Learners</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Year of manufacture</div><div class="ctrl"><input type="number" name="v_year[]" min="1950" max="2030"></div></div>
         <div class="field"><div class="lbl">Make</div><div class="ctrl"><input type="text" name="v_make[]"></div></div>
@@ -1323,25 +1347,31 @@
         <div class="field"><div class="lbl">VIN number</div><div class="ctrl"><input type="text" name="v_vin[]"></div></div>
         <div class="field"><div class="lbl">Sum insured</div><div class="ctrl"><input type="text" name="v_si[]"></div></div>
         <div class="field"><div class="lbl">Type of cover</div><div class="ctrl">
-          <select name="v_cover[]"><option value=""></option><option>Comprehensive</option><option>Third party, fire and theft</option><option>Third party only</option><option>Laid-up (fire and theft only)</option></select>
+          <select name="v_cover[]"><option value=""></option><option>Comprehensive</option><option>Third party, fire and theft</option><option>Third party only</option><option>Laid-up (fire and theft only)</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Class of use</div><div class="ctrl">
-          <select name="v_class[]"><option value=""></option><option>Private - To and from work</option><option>Business</option></select>
+          <select name="v_class[]"><option value=""></option><option>Private - To and from work</option><option>Business</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Overnight parking</div><div class="ctrl">
-          <select name="v_park[]"><option value=""></option><option>Locked garage</option><option>Behind locked gates</option><option>Access controlled area</option><option>Carport</option><option>Open parking lot</option></select>
+          <select name="v_park[]"><option value=""></option><option>Locked garage</option><option>Behind locked gates</option><option>Access controlled area</option><option>Carport</option><option>Open parking lot</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Basic excess</div><div class="ctrl">
-          <select name="v_excess[]"><option value=""></option><option>Nil</option><option>R 2 500</option><option>R 4 000</option><option>5% of claim min R 2 500</option><option>10% of claim min R 10 000</option></select>
+          <select name="v_excess[]"><option value=""></option><option>Nil</option><option>R 2 500</option><option>R 4 000</option><option>5% of claim min R 2 500</option><option>10% of claim min R 10 000</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Tracking device</div><div class="ctrl">
-          <select name="v_tracker[]"><option value=""></option><option>None</option><option>Beame</option><option>Bidtrack</option><option>C-Track</option><option>Cartrack</option><option>Matrix MX1</option><option>Matrix MX2</option><option>Matrix MX3</option><option>Netstar Basic</option><option>Netstar Plus</option><option>Netstar Early Warning</option><option>Tracker Retrieve</option><option>Tracker Skytrax</option><option>Tracetec</option><option>Pulsit</option><option>Other</option></select>
+          <select name="v_tracker[]"><option value=""></option><option>None</option><option>Beame</option><option>Bidtrack</option><option>C-Track</option><option>Cartrack</option><option>Matrix MX1</option><option>Matrix MX2</option><option>Matrix MX3</option><option>Netstar Basic</option><option>Netstar Plus</option><option>Netstar Early Warning</option><option>Tracker Retrieve</option><option>Tracker Skytrax</option><option>Tracetec</option><option>Pulsit</option><option>Other</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
         <div class="field"><div class="lbl">Car hire group</div><div class="ctrl">
-          <select name="v_hire[]"><option value=""></option><option>None</option><option>Group B - Compact (Polo hatch)</option><option>Group C - Intermediate (Corolla manual)</option><option>Group D - Standard (Corolla automatic)</option><option>Group G - Premium (BMW 320i automatic)</option><option>Group J - LDV (Hilux single cab)</option></select>
+          <select name="v_hire[]"><option value=""></option><option>None</option><option>Manual - Cheapest</option><option>Automatic</option><option>Luxury</option><option>Bakkie</option><option value="custom">Custom...</option></select>
         </div></div>
         <div class="field"><div class="lbl">Pothole Sure</div><div class="ctrl">
-          <select name="v_pothole[]"><option value=""></option><option>No</option><option>Yes</option></select>
+          <select name="v_pothole[]"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
         </div></div>
       </div>
     </div>
@@ -1373,21 +1403,22 @@
   <div class="hint">Cover for third-party claims arising from your business operations on the premises.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Public liability limit</div><div class="ctrl">
-      <select name="public_liab"><option value=""></option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option><option>R 10 000 000</option><option>R 20 000 000</option></select>
+      <select name="public_liab"><option value=""></option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option><option>R 10 000 000</option><option>R 20 000 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
-    <div class="field"><div class="lbl">First amount payable</div><div class="ctrl">
-      <select name="public_excess"><option value=""></option><option>R 2 500</option><option>R 5 000</option><option>R 10 000</option></select>
-    </div></div>
+
   </div>
 
 <div class="banner">Work Away</div>
   <div class="hint">Cover for work performed away from the insured premises (off-site activities).</div>
   <div class="grid">
     <div class="field"><div class="lbl">Work away limit</div><div class="ctrl">
-      <select name="workaway_lim"><option value=""></option><option>R 500 000</option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option></select>
+      <select name="workaway_lim"><option value=""></option><option>R 500 000</option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Territorial limit</div><div class="ctrl">
-      <select name="workaway_terr"><option value=""></option><option>RSA only</option><option>RSA &amp; neighbouring countries</option><option>Worldwide</option></select>
+      <select name="workaway_terr"><option value=""></option><option>RSA only</option><option>RSA &amp; neighbouring countries</option><option>Worldwide</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
   </div>
 
@@ -1395,24 +1426,26 @@
   <div class="hint">Cover for legal liability to employees beyond Workmens Compensation.</div>
   <div class="grid">
     <div class="field"><div class="lbl">Employers liability limit</div><div class="ctrl">
-      <select name="liab_emp"><option value=""></option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option><option>R 10 000 000</option></select>
+      <select name="liab_emp"><option value=""></option><option>R 1 000 000</option><option>R 2 500 000</option><option>R 5 000 000</option><option>R 10 000 000</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Number of employees</div><div class="ctrl"><input type="number" name="emp_count" min="0" placeholder="0"></div></div>
   </div>
 
 <div class="banner">Contractors All Risk</div>
-  <div class="note"><b>Important:</b> Contractors All Risk is a completely separate application form. Please contact your broker to request the dedicated CAR proposal form. Tick this section above only to indicate interest — full details are captured on the CAR form, not here.</div>
+  <div class="note"><b>Important:</b> Contractors All Risk is a completely separate application form. Please contact your broker to request the dedicated CAR proposal form. Tick this section above only to indicate interest - full details are captured on the CAR form, not here.</div>
   <div class="grid">
-    <div class="field full"><div class="lbl">Project description (brief)</div><div class="ctrl"><input type="text" name="car_desc" placeholder="Optional — broker will follow up with the full CAR application"></div></div>
+    <div class="field full"><div class="lbl">Project description (brief)</div><div class="ctrl"><input type="text" name="car_desc" placeholder="Optional - broker will follow up with the full CAR application"></div></div>
   </div>
 
 <div class="banner">Machinery Breakdown</div>
   <div class="grid">
     <div class="field"><div class="lbl">Machinery breakdown sum insured</div><div class="ctrl"><input type="text" name="mb_si" placeholder="R"></div></div>
     <div class="field"><div class="lbl">Machinery BI indemnity period</div><div class="ctrl">
-      <select name="mb_bi_period"><option value=""></option><option>Not required</option><option>3 months</option><option>6 months</option><option>12 months</option></select>
+      <select name="mb_bi_period"><option value=""></option><option>Not required</option><option>3 months</option><option>6 months</option><option>12 months</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
-    <div class="field full"><div class="lbl">Description of machinery</div><div class="ctrl"><input type="text" name="mb_desc" placeholder="e.g. compressors, generators, production line equipment"></div></div>
+    <div class="field full"><div class="lbl">Description of machinery</div><div class="ctrl"><input type="text" name="mb_desc" placeholder="e.g. earphones, fridges, compressors, generators, production line equipment"></div></div>
   </div>
 
   <div class="footer">
@@ -1433,7 +1466,7 @@
   </div>
 
 <div class="banner">Business All Risk</div>
-  <div class="hint">Items that leave the business premises — e.g. tools, laptops, work mobile phones. List each item separately.</div>
+  <div class="hint">Items that leave the business premises - e.g. tools, laptops, work mobile phones. List each item separately.</div>
   <div id="allrisk-list">
     <div class="allrisk-item">
       <div class="sub-head">Item<span class="num">1</span></div>
@@ -1441,16 +1474,12 @@
         <div class="field"><div class="lbl">Item type</div><div class="ctrl">
           <select name="ar_type[]">
             <option value=""></option>
-            <option>Unknown</option>
-            <option>Jewellery</option>
-            <option>Watch</option>
-            <option>Spectacles / Sunglasses</option>
-            <option>Camera</option>
-            <option>Musical instrument</option>
-            <option>Sports equipment</option>
-            <option>Hearing aid</option>
-            <option>Mobility aid</option>
+            <option>Tools</option>
+            <option>Laptops</option>
+            <option>Machinery taken out of office</option>
+            <option>Cell phones</option>
             <option>Other</option>
+            <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Item sum insured</div><div class="ctrl"><input type="text" name="ar_sum[]" placeholder="R"></div></div>
@@ -1483,7 +1512,7 @@
   </div>
 
 <div class="banner">Personal All Risk</div>
-  <div class="hint">Personal items used outside the home — e.g. personal laptops, mobile phones, jewellery, watches, handbags. List each item separately.</div>
+  <div class="hint">Personal items used outside the home - e.g. personal laptops, mobile phones, jewellery, watches, handbags. List each item separately.</div>
   <div id="par-list">
     <div class="par-item">
       <div class="sub-head">Item<span class="num">1</span></div>
@@ -1501,6 +1530,7 @@
             <option>Sports equipment</option>
             <option>Hearing aid</option>
             <option>Other</option>
+          <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Item sum insured</div><div class="ctrl"><input type="text" name="par_si[]" placeholder="R"></div></div>
@@ -1542,15 +1572,14 @@
         <div class="field"><div class="lbl">Equipment type</div><div class="ctrl">
           <select name="ee_type[]">
             <option value=""></option>
-            <option>As described</option>
-            <option>CCTV Equipment</option>
-            <option>Cellphone</option>
-            <option>Computers and Accessories</option>
-            <option>GPS</option>
-            <option>iPod</option>
-            <option>Laptop</option>
-            <option>Smart watch</option>
-            <option>Tablet</option>
+            <option>CCTV</option>
+            <option>Computers / Accessories</option>
+            <option>Printers</option>
+            <option>PABX Phone Systems</option>
+            <option>Laptops</option>
+            <option>Servers</option>
+            <option>TVs</option>
+            <option value="custom">Custom...</option>
           </select>
         </div></div>
         <div class="field"><div class="lbl">Sum insured</div><div class="ctrl"><input type="text" name="ee_sum[]" placeholder="R"></div></div>
@@ -1585,16 +1614,19 @@
 <div class="banner">Insurance Declaration</div>
   <div class="grid one">
     <div class="field full"><div class="lbl">Have you or any driver(s) of the vehicle(s)/plant(s) ever been charged or convicted of any offence under the Road Traffic Act 93 of 1996 over the past 5 years?</div><div class="ctrl">
-      <select name="decl_traffic"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="decl_traffic"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field full"><div class="lbl">Have you or any driver(s) had any civil or criminal judgements or pending cases against you over the past 5 years?</div><div class="ctrl">
-      <select name="decl_civil"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="decl_civil"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
   </div>
 
   <div class="grid" style="margin-top:6px">
     <div class="field"><div class="lbl">Currently insured?</div><div class="ctrl">
-      <select name="cur_ins"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="cur_ins"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Name of insurer</div><div class="ctrl"><input type="text" name="cur_insurer"></div></div>
     <div class="field"><div class="lbl">Policy number</div><div class="ctrl"><input type="text" name="cur_policy"></div></div>
@@ -1621,21 +1653,26 @@
 <div class="banner">Has an insurer at any time</div>
   <div class="grid">
     <div class="field"><div class="lbl">Declined your insurance?</div><div class="ctrl">
-      <select name="ins_declined"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="ins_declined"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Imposed special terms?</div><div class="ctrl">
-      <select name="ins_terms"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="ins_terms"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Refused to renew your policy?</div><div class="ctrl">
-      <select name="ins_renew"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="ins_renew"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Cancelled your policy?</div><div class="ctrl">
-      <select name="ins_cancel"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="ins_cancel"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Voided any policy?</div><div class="ctrl">
-      <select name="ins_void"><option value=""></option><option>No</option><option>Yes</option></select>
+      <select name="ins_void"><option value=""></option><option>No</option><option>Yes</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
-    <div class="field"><div class="lbl">If yes — reason</div><div class="ctrl"><input type="text" name="ins_reason"></div></div>
+    <div class="field"><div class="lbl">If yes - reason</div><div class="ctrl"><input type="text" name="ins_reason"></div></div>
   </div>
 
   <div style="margin-top:8px"><b style="font-size:9pt">Please provide details of all previous incidents in the past 3 years whether a claim was submitted or not</b></div>
@@ -1694,16 +1731,19 @@
   <div class="grid">
     <div class="field full"><div class="lbl">Account holder full name</div><div class="ctrl"><input type="text" name="bank_holder"></div></div>
     <div class="field"><div class="lbl">Name of bank</div><div class="ctrl">
-      <select name="bank_name"><option value=""></option><option>ABSA</option><option>Capitec</option><option>Discovery Bank</option><option>FNB</option><option>Investec</option><option>Nedbank</option><option>Standard Bank</option><option>TymeBank</option><option>Other</option></select>
+      <select name="bank_name"><option value=""></option><option>ABSA</option><option>Capitec</option><option>Discovery Bank</option><option>FNB</option><option>Investec</option><option>Nedbank</option><option>Standard Bank</option><option>TymeBank</option><option>Other</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Account type</div><div class="ctrl">
-      <select name="bank_type"><option value=""></option><option>Cheque / Current</option><option>Savings</option><option>Transmission</option><option>Business</option></select>
+      <select name="bank_type"><option value=""></option><option>Cheque / Current</option><option>Savings</option><option>Transmission</option><option>Business</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
     <div class="field"><div class="lbl">Branch code</div><div class="ctrl"><input type="text" name="bank_branch_code"></div></div>
     <div class="field"><div class="lbl">Name of branch</div><div class="ctrl"><input type="text" name="bank_branch"></div></div>
     <div class="field"><div class="lbl">Account number</div><div class="ctrl"><input type="text" name="bank_acc_no"></div></div>
     <div class="field"><div class="lbl">Payment date</div><div class="ctrl">
-      <select name="bank_pay_date"><option value=""></option><option>1st of the month</option><option>7th of the month</option><option>15th of the month</option><option>25th of the month</option></select>
+      <select name="bank_pay_date"><option value=""></option><option>1st of the month</option><option>7th of the month</option><option>15th of the month</option><option>25th of the month</option><option value="custom">Custom...</option>
+          </select>
     </div></div>
   </div>
 
@@ -1722,7 +1762,7 @@
 <div class="submit-panel no-print">
   <button onclick="downloadPDF()">📄 Download PDF</button>
   <button class="secondary" onclick="emailToBroker()">✉ Email to Broker</button>
-  <div class="hint-text">"Email to Broker" generates a PDF and opens your email client pre-addressed to <b>quotes@sabroking.co.za</b>. The generated PDF will be saved to your downloads — please attach it to the email before sending.</div>
+  <div class="hint-text">"Email to Broker" generates a PDF and opens your email client pre-addressed to <b>quotes@sabroking.co.za</b>. The generated PDF will be saved to your downloads - please attach it to the email before sending.</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -2257,7 +2297,7 @@ async function emailToBroker(){
     const contact = document.querySelector('[name=contact_person]').value.trim() || '';
     const date = new Date().toISOString().split('T')[0];
 
-    const subject = encodeURIComponent(`Commercial Proposal Form — ${company}`);
+    const subject = encodeURIComponent(`Commercial Proposal Form - ${company}`);
     const bodyLines = [
       `Good day,`,
       ``,
@@ -2319,5 +2359,31 @@ async function generatePdfForEmail(){
 }
 </script>
 
+
+<script>
+/* Custom select option handler */
+document.addEventListener('change', function(e) {
+  if (e.target.tagName !== 'SELECT') return;
+  var sel = e.target;
+  var ctrl = sel.closest('.ctrl');
+  if (!ctrl) return;
+  var customIn = ctrl.querySelector('.custom-sel-input');
+  if (sel.value === 'custom') {
+    if (!customIn) {
+      customIn = document.createElement('input');
+      customIn.type = 'text';
+      customIn.className = 'custom-sel-input';
+      customIn.placeholder = 'Type your own...';
+      var nm = sel.name || '';
+      customIn.name = nm ? nm.replace(/(\[\])?$/, function(m, g) { return '_custom' + (g||''); }) : 'custom_val';
+      ctrl.appendChild(customIn);
+    }
+    customIn.style.display = 'block';
+    customIn.focus();
+  } else {
+    if (customIn) customIn.style.display = 'none';
+  }
+});
+</script>
 </body>
 </html>
