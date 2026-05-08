@@ -859,17 +859,30 @@
   }
 
     /* Custom option text input */
+    .field .ctrl.has-custom {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 4px 8px;
+      gap: 4px;
+    }
+    .field .ctrl.has-custom select {
+      width: 100%;
+    }
     .custom-sel-input {
       display: none;
-      margin-top: 5px;
       width: 100%;
       box-sizing: border-box;
-      padding: 5px 8px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      padding: 5px 10px;
+      border: 1px solid var(--field-border);
+      border-radius: var(--r-sm);
       font-size: 13px;
       font-family: inherit;
       color: var(--text);
+      background: var(--field-bg);
+      outline: none;
+    }
+    .custom-sel-input:focus {
+      border-color: var(--brand);
       background: #fff;
     }
   </style>
@@ -1483,7 +1496,7 @@
           </select>
         </div></div>
         <div class="field"><div class="lbl">Item sum insured</div><div class="ctrl"><input type="text" name="ar_sum[]" placeholder="R"></div></div>
-        <div class="field full"><div class="lbl">Description</div><div class="ctrl"><input type="text" name="ar_desc[]" placeholder="e.g. Diamond engagement ring, 1.5ct"></div></div>
+        <div class="field full"><div class="lbl">Description</div><div class="ctrl"><input type="text" name="ar_desc[]" placeholder="e.g. Makita drill set, Lenovo laptop serial XYZ"></div></div>
         <div class="field"><div class="lbl">Serial number</div><div class="ctrl"><input type="text" name="ar_serial[]" placeholder="If applicable"></div></div>
         <div class="field"><div class="lbl">Year acquired</div><div class="ctrl"><input type="text" name="ar_year[]"></div></div>
       </div>
@@ -2378,9 +2391,11 @@ document.addEventListener('change', function(e) {
       customIn.name = nm ? nm.replace(/(\[\])?$/, function(m, g) { return '_custom' + (g||''); }) : 'custom_val';
       ctrl.appendChild(customIn);
     }
+    ctrl.classList.add('has-custom');
     customIn.style.display = 'block';
     customIn.focus();
   } else {
+    ctrl.classList.remove('has-custom');
     if (customIn) customIn.style.display = 'none';
   }
 });
