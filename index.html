@@ -1774,30 +1774,6 @@ function checkPageOverflow(){
 
     if(contentBottom > A4_USABLE_PX + 10){
       page.classList.add('overflow-warning');
-
-      // Find the best break point: the last candidate whose bottom is within A4
-      let breakAfter = null;
-      for(const c of candidates){
-        const r = c.el.getBoundingClientRect();
-        const bottom = r.bottom - pageRect.top;
-        if(bottom <= A4_USABLE_PX){
-          breakAfter = c;
-        }
-      }
-
-      const indicator = document.createElement('div');
-      indicator.className = 'a4-page-break-indicator';
-      indicator.innerHTML = '<span>✂ A4 Page Boundary &nbsp;·&nbsp; Content below will appear on the next page in the PDF</span>';
-
-      if(breakAfter){
-        if(breakAfter.el.nextSibling){
-          breakAfter.parent.insertBefore(indicator, breakAfter.el.nextSibling);
-        } else {
-          breakAfter.parent.appendChild(indicator);
-        }
-      } else if(candidates.length){
-        candidates[0].parent.insertBefore(indicator, candidates[0].el);
-      }
     } else {
       page.classList.remove('overflow-warning');
     }
@@ -2183,15 +2159,16 @@ async function downloadPDF(){
       // Each PDF page gets: header strip + content slice + footer strip = exactly A4
       const slotH = a4H - headerCanvas.height - footerCanvas.height; // px available for content
 
-      // Find section break points within the content region only
+      // Find section break points within the content region only.
+      // Track banner vs sub-head so we can prevent banners being orphaned.
       const breakCandidates = cloned.querySelectorAll('.banner, .sub-head');
-      const breakPts = [];
+      const breakPts = []; // { y, isBanner }
       breakCandidates.forEach(el => {
         const r = el.getBoundingClientRect();
         const yInContent = (r.top - pageRect.top) * captureScale - headerEndY;
-        if(yInContent > 60) breakPts.push(Math.round(yInContent));
+        if(yInContent > 60) breakPts.push({ y: Math.round(yInContent), isBanner: el.classList.contains('banner') });
       });
-      breakPts.sort((a, b) => a - b);
+      breakPts.sort((a, b) => a.y - b.y);
 
       let srcY = 0; // current position within content region
       while(srcY < contentH){
@@ -2203,8 +2180,29 @@ async function downloadPDF(){
           const minCut = srcY + slotH * 0.42; // don't cut before 42% mark
           let best = null;
           for(const bp of breakPts){
-            if(bp > minCut && bp <= sliceEnd) best = bp;
+            if(bp.y > minCut && bp.y <= sliceEnd) best = bp.y;
           }
+
+          // Anti-orphan: if a .banner inside the slice has no .sub-head following
+          // it before the cut point, the banner would be stranded alone at the
+          // bottom of the page. Pull the cut back to just before that banner.
+          if(best !== null){
+            let adjusted = best;
+            for(const bp of breakPts){
+              if(bp.isBanner && bp.y > srcY && bp.y < adjusted){
+                const noSubHeadAfter = !breakPts.some(
+                  b => !b.isBanner && b.y > bp.y && b.y < adjusted
+                );
+                const gapTocut = adjusted - bp.y;
+                const inTailZone = bp.y > srcY + slotH * 0.80;
+                if(noSubHeadAfter && (gapTocut < 400 || inTailZone)){
+                  adjusted = bp.y;
+                }
+              }
+            }
+            best = adjusted;
+          }
+
           if(best !== null) sliceEnd = best;
         }
 
