@@ -486,19 +486,34 @@
   .cover label{
     flex:0 0 33.333%;width:33.333%;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
+    align-items:stretch;
     font-size:8pt;
     font-weight:500;
-    padding:4px 10px;
+    padding:0;
     border-bottom:1px solid var(--gray-100);
     cursor:pointer;
     user-select:none;
     box-sizing:border-box;
     transition:background 0.1s;
     color:var(--gray-700);
+    min-height:36px;
   }
-  .cover label:hover{background:var(--gray-50)}
+  .cover label:hover{background:var(--blue-50,#f0f5ff)}
+  .cover-label-text{
+    flex:1;
+    display:flex;
+    align-items:center;
+    padding:6px 10px;
+    line-height:1.3;
+  }
+  .cover-cb-box{
+    flex:0 0 42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-left:1px solid var(--gray-100);
+    transition:background 0.1s;
+  }
   .cover label:nth-child(3n+1):not(:nth-last-child(-n+3)){border-right:1px solid var(--gray-100)}
   .cover label:nth-child(3n+2):not(:nth-last-child(-n+3)){border-right:1px solid var(--gray-100)}
   .cover label:nth-child(3n+1){border-right:1px solid var(--gray-100)}
@@ -510,17 +525,17 @@
 
   .cover input[type=checkbox]{
     appearance:none;-webkit-appearance:none;
-    width:16px;height:16px;
-    border:1.5px solid var(--gray-400);
+    width:18px;height:18px;
+    border:1.5px solid var(--gray-300);
     background:#fff;
-    border-radius:var(--r-sm);
+    border-radius:4px;
     cursor:pointer;
     flex-shrink:0;
-    margin-left:10px;
+    margin:0;
     position:relative;
-    transition:border-color 0.15s, background 0.15s, transform 0.06s;
+    transition:border-color 0.15s, background 0.15s, transform 0.08s, box-shadow 0.15s;
   }
-  .cover input[type=checkbox]:hover{border-color:var(--blue)}
+  .cover input[type=checkbox]:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,95,180,0.12)}
   .cover input[type=checkbox]:checked{
     background:var(--blue);
     border-color:var(--blue);
@@ -528,10 +543,11 @@
   .cover input[type=checkbox]:checked::after{
     content:"";
     position:absolute;
-    left:4px;top:0px;
+    left:50%;top:45%;
+    transform:translate(-50%,-50%) rotate(45deg);
     width:5px;height:9px;
-    border:solid #fff;border-width:0 2px 2px 0;
-    transform:rotate(45deg);
+    border:2px solid #fff;
+    border-top:none;border-left:none;
   }
   .cover input[type=checkbox]:active{transform:scale(0.92)}
 
@@ -838,18 +854,12 @@
     font-weight:700;
     color:var(--blue-dk);
     font-size:7.5pt;
-    margin:5px 4px 2px;
+    margin:8px 4px 2px;
     text-transform:uppercase;
     letter-spacing:1px;
     display:flex;
     align-items:center;
     gap:10px;
-  }
-  .cover-group-header::before{
-    content:"";
-    width:18px;height:1.5px;
-    background:var(--blue);
-    flex-shrink:0;
   }
   .cover-group-header::after{
     content:"";
@@ -1076,63 +1086,63 @@
 
   <div class="cover-group-header">Fire &amp; Property</div>
   <div class="cover">
-    <label>Fire - Stock <input type="checkbox" name="cov_fire_stock"></label>
-    <label>Fire - Building <input type="checkbox" name="cov_fire_building"></label>
-    <label>Fire - Miscellaneous <input type="checkbox" name="cov_fire_misc"></label>
-    <label>Office contents <input type="checkbox" name="cov_office"></label>
-    <label>Furniture <input type="checkbox" name="cov_furniture"></label>
-    <label>Business interruption <input type="checkbox" name="cov_bi"></label>
-    <label>Accounts receivable <input type="checkbox" name="cov_accrec"></label>
-    <label>Deterioration of stock <input type="checkbox" name="cov_dos"></label>
+    <label><span class="cover-label-text">Fire - Stock</span><span class="cover-cb-box"><input type="checkbox" name="cov_fire_stock"></span></label>
+    <label><span class="cover-label-text">Fire - Building</span><span class="cover-cb-box"><input type="checkbox" name="cov_fire_building"></span></label>
+    <label><span class="cover-label-text">Fire - Miscellaneous</span><span class="cover-cb-box"><input type="checkbox" name="cov_fire_misc"></span></label>
+    <label><span class="cover-label-text">Office contents</span><span class="cover-cb-box"><input type="checkbox" name="cov_office"></span></label>
+    <label><span class="cover-label-text">Furniture</span><span class="cover-cb-box"><input type="checkbox" name="cov_furniture"></span></label>
+    <label><span class="cover-label-text">Business interruption</span><span class="cover-cb-box"><input type="checkbox" name="cov_bi"></span></label>
+    <label><span class="cover-label-text">Accounts receivable</span><span class="cover-cb-box"><input type="checkbox" name="cov_accrec"></span></label>
+    <label><span class="cover-label-text">Deterioration of stock</span><span class="cover-cb-box"><input type="checkbox" name="cov_dos"></span></label>
   </div>
 
   <div class="cover-group-header">Theft, Money &amp; Glass</div>
   <div class="cover">
-    <label>Theft <input type="checkbox" name="cov_theft"></label>
-    <label>Money - on premises <input type="checkbox" name="cov_money_prem"></label>
-    <label>Money - to/from bank <input type="checkbox" name="cov_money_bank"></label>
-    <label>Glass - on premises <input type="checkbox" name="cov_glass_prem"></label>
-    <label>Glass - shop fittings <input type="checkbox" name="cov_glass_fittings"></label>
-    <label>Glass - display windows &amp; signage <input type="checkbox" name="cov_glass_signage"></label>
-    <label>Fidelity <input type="checkbox" name="cov_fidelity"></label>
+    <label><span class="cover-label-text">Theft</span><span class="cover-cb-box"><input type="checkbox" name="cov_theft"></span></label>
+    <label><span class="cover-label-text">Money - on premises</span><span class="cover-cb-box"><input type="checkbox" name="cov_money_prem"></span></label>
+    <label><span class="cover-label-text">Money - to/from bank</span><span class="cover-cb-box"><input type="checkbox" name="cov_money_bank"></span></label>
+    <label><span class="cover-label-text">Glass - on premises</span><span class="cover-cb-box"><input type="checkbox" name="cov_glass_prem"></span></label>
+    <label><span class="cover-label-text">Glass - shop fittings</span><span class="cover-cb-box"><input type="checkbox" name="cov_glass_fittings"></span></label>
+    <label><span class="cover-label-text">Glass - display windows &amp; signage</span><span class="cover-cb-box"><input type="checkbox" name="cov_glass_signage"></span></label>
+    <label><span class="cover-label-text">Fidelity</span><span class="cover-cb-box"><input type="checkbox" name="cov_fidelity"></span></label>
   </div>
 
   <div class="cover-group-header">Transit, Accidental &amp; All Risk</div>
   <div class="cover">
-    <label>Goods in transit <input type="checkbox" name="cov_git"></label>
-    <label>Accidental damage - building <input type="checkbox" name="cov_acc_building"></label>
-    <label>Accidental damage - inside premises <input type="checkbox" name="cov_acc_premises"></label>
-    <label>Business all risk <input type="checkbox" name="cov_bar"></label>
-    <label>Personal all risk <input type="checkbox" name="cov_par"></label>
+    <label><span class="cover-label-text">Goods in transit</span><span class="cover-cb-box"><input type="checkbox" name="cov_git"></span></label>
+    <label><span class="cover-label-text">Accidental damage - building</span><span class="cover-cb-box"><input type="checkbox" name="cov_acc_building"></span></label>
+    <label><span class="cover-label-text">Accidental damage - inside premises</span><span class="cover-cb-box"><input type="checkbox" name="cov_acc_premises"></span></label>
+    <label><span class="cover-label-text">Business all risk</span><span class="cover-cb-box"><input type="checkbox" name="cov_bar"></span></label>
+    <label><span class="cover-label-text">Personal all risk</span><span class="cover-cb-box"><input type="checkbox" name="cov_par"></span></label>
   </div>
 
   <div class="cover-group-header">Liability &amp; Engineering</div>
   <div class="cover">
-    <label>Public liability <input type="checkbox" name="cov_public"></label>
-    <label>Work away <input type="checkbox" name="cov_workaway"></label>
-    <label>Employers liability <input type="checkbox" name="cov_emp"></label>
-    <label>Contractors all risk* <input type="checkbox" name="cov_car"></label>
-    <label>Machinery breakdown <input type="checkbox" name="cov_mb"></label>
-    <label>Machinery BI <input type="checkbox" name="cov_mbbi"></label>
-    <label>Plant all risk <input type="checkbox" name="cov_plant"></label>
-    <label>Stated benefits <input type="checkbox" name="cov_stated"></label>
-    <label>Group personal accident <input type="checkbox" name="cov_gpa"></label>
-    <label>Personal legal liability <input type="checkbox" name="cov_pll"></label>
+    <label><span class="cover-label-text">Public liability</span><span class="cover-cb-box"><input type="checkbox" name="cov_public"></span></label>
+    <label><span class="cover-label-text">Work away</span><span class="cover-cb-box"><input type="checkbox" name="cov_workaway"></span></label>
+    <label><span class="cover-label-text">Employers liability</span><span class="cover-cb-box"><input type="checkbox" name="cov_emp"></span></label>
+    <label><span class="cover-label-text">Contractors all risk*</span><span class="cover-cb-box"><input type="checkbox" name="cov_car"></span></label>
+    <label><span class="cover-label-text">Machinery breakdown</span><span class="cover-cb-box"><input type="checkbox" name="cov_mb"></span></label>
+    <label><span class="cover-label-text">Machinery BI</span><span class="cover-cb-box"><input type="checkbox" name="cov_mbbi"></span></label>
+    <label><span class="cover-label-text">Plant all risk</span><span class="cover-cb-box"><input type="checkbox" name="cov_plant"></span></label>
+    <label><span class="cover-label-text">Stated benefits</span><span class="cover-cb-box"><input type="checkbox" name="cov_stated"></span></label>
+    <label><span class="cover-label-text">Group personal accident</span><span class="cover-cb-box"><input type="checkbox" name="cov_gpa"></span></label>
+    <label><span class="cover-label-text">Personal legal liability</span><span class="cover-cb-box"><input type="checkbox" name="cov_pll"></span></label>
   </div>
 
   <div class="cover-group-header">Electronic &amp; Vehicles</div>
   <div class="cover">
-    <label>Electronic equipment <input type="checkbox" name="cov_elec"></label>
-    <label>Motor - private type <input type="checkbox" name="cov_private"></label>
-    <label>Motor - LCV &lt; 3 500kg <input type="checkbox" name="cov_lcv"></label>
-    <label>Motor - commercial &gt; 3 500kg <input type="checkbox" name="cov_cv"></label>
-    <label>Motorcycles <input type="checkbox" name="cov_moto"></label>
-    <label>Busses <input type="checkbox" name="cov_busses"></label>
-    <label>Trailers / caravans <input type="checkbox" name="cov_trailers"></label>
-    <label>Special types <input type="checkbox" name="cov_special"></label>
-    <label>Watercraft <input type="checkbox" name="cov_water"></label>
-    <label>Houseowners <input type="checkbox" name="cov_house"></label>
-    <label>Householders <input type="checkbox" name="cov_holders"></label>
+    <label><span class="cover-label-text">Electronic equipment</span><span class="cover-cb-box"><input type="checkbox" name="cov_elec"></span></label>
+    <label><span class="cover-label-text">Motor - private type</span><span class="cover-cb-box"><input type="checkbox" name="cov_private"></span></label>
+    <label><span class="cover-label-text">Motor - LCV &lt; 3 500kg</span><span class="cover-cb-box"><input type="checkbox" name="cov_lcv"></span></label>
+    <label><span class="cover-label-text">Motor - commercial &gt; 3 500kg</span><span class="cover-cb-box"><input type="checkbox" name="cov_cv"></span></label>
+    <label><span class="cover-label-text">Motorcycles</span><span class="cover-cb-box"><input type="checkbox" name="cov_moto"></span></label>
+    <label><span class="cover-label-text">Busses</span><span class="cover-cb-box"><input type="checkbox" name="cov_busses"></span></label>
+    <label><span class="cover-label-text">Trailers / caravans</span><span class="cover-cb-box"><input type="checkbox" name="cov_trailers"></span></label>
+    <label><span class="cover-label-text">Special types</span><span class="cover-cb-box"><input type="checkbox" name="cov_special"></span></label>
+    <label><span class="cover-label-text">Watercraft</span><span class="cover-cb-box"><input type="checkbox" name="cov_water"></span></label>
+    <label><span class="cover-label-text">Houseowners</span><span class="cover-cb-box"><input type="checkbox" name="cov_house"></span></label>
+    <label><span class="cover-label-text">Householders</span><span class="cover-cb-box"><input type="checkbox" name="cov_holders"></span></label>
   </div>
   <div class="hint" style="border:none;background:transparent;padding:8px 4px;margin-top:4px">*Contractors All Risk requires a separate application form - please request from your broker.</div>
 
